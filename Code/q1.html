@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+    <script src="d3.v6.min.js"></script>
     <style>
         body {
             margin: 0;
@@ -11,7 +11,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            background-image: url('bg1.jpeg');
+            background-image: url('./Pictures/bg1.jpeg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -159,7 +159,7 @@
 
 <body>
     <div class="back-button-container">
-        <a href="index.html" class="back-button">Back to Home</a>
+        <a href="../index.html" class="back-button">Back to Home</a>
     </div>
     <div class="content-wrapper">
         <div class="controls">
@@ -257,7 +257,7 @@
                     // Add running icon animation
                     const icon = svg.append("image")
                         .attr("class", "running-icon")
-                        .attr("xlink:href", `${gender}.png`)
+                        .attr("xlink:href", `./Pictures/${gender}.png`)
                         .attr("width", 30)
                         .attr("height", 30);
 
@@ -417,7 +417,7 @@
                     // Icon for single gender
                     legendItems.append("image")
                         .attr("class", "legend-icon")
-                        .attr("xlink:href", d => `${d.gender}.png`)
+                        .attr("xlink:href", d => `./Pictures/${d.gender}.png`)
                         .attr("width", 24)
                         .attr("height", 24)
                         .style("opacity", 0)

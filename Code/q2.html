@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Choropleth Map - Long Distance Running</title>
-    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="d3.v6.min.js"></script>
     <script src="https://unpkg.com/topojson@3"></script>
     <style>
         * {
@@ -20,7 +20,7 @@
             color: #2c3e50;
             padding: 20px;
             min-height: 100vh;
-            background-image: url('bg4.jpeg');
+            background-image: url('./Pictures/bg4.jpeg');
             background-size: cover;
         }
 
@@ -216,7 +216,7 @@
 </head>
 <body>
     <div class="back-button-container">
-        <a href="index.html" class="back-button">Back to Home</a>
+        <a href="../index.html" class="back-button">Back to Home</a>
     </div>
     <h2>Choropleth Map: Long-Distance Running Performance</h2>
     <button id="kmBtn" class="active">KM</button>
@@ -490,11 +490,11 @@
         }
 
         Promise.all([
-            d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson"),
-            d3.csv("split_part_1.csv"),
-            d3.csv("split_part_2.csv"),
-            d3.csv("split_part_3.csv"),
-            d3.csv("split_part_4.csv")
+            d3.json("./Datasets/world.geojson"),
+            d3.csv("./Datasets/split_part_1.csv"),
+            d3.csv("./Datasets/split_part_2.csv"),
+            d3.csv("./Datasets/split_part_3.csv"),
+            d3.csv("./Datasets/split_part_4.csv")
         ]).then(([worldData, ...csvData]) => {
             world = worldData;
             let mergedCsvData = [].concat(...csvData);
